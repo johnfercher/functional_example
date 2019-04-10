@@ -1,20 +1,14 @@
 extern crate rand;
 
 fn main() {
-    let colecao_aleatoria: [u16; 32] = rand::random();
+    let colecao_aleatoria: [u16; 8] = rand::random();
 
-    let numbers = colecao_aleatoria
+    let colecao_de_pares = colecao_aleatoria
         .to_vec()
         .into_iter()
-        .map(|x| {
-            if x % 2 == 0 {
-                String::from(format!("Número par: {:?}", x))
-            } else {
-                String::from(format!("Número impar: {:?}", x))
-            }
-        })
-        .collect::<Vec<String>>();
+        .filter(|x| x % 2 == 0)
+        .collect::<Vec<u16>>();
 
     println!("{:?}", colecao_aleatoria);
-    println!("{:?}", numbers);
+    println!("{:?}", colecao_de_pares);
 }
