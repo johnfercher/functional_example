@@ -1,14 +1,12 @@
 extern crate rand;
 
 fn main() {
-    let colecao_aleatoria: [u16; 8] = rand::random();
+    let numbers = vec![1,2,3,4,5,6];
 
-    let colecao_aleatoria_invertida  = colecao_aleatoria
-        .to_vec()
-        .into_iter()
-        .rev()
-        .collect::<Vec<u16>>();
+    let sum: u32 = numbers
+        .iter()
+        .product();
 
-    println!("{:?}", colecao_aleatoria);
-    println!("{:?}", colecao_aleatoria_invertida);
+    println!("{:?}", numbers);
+    println!("{:?}", sum);
 }
