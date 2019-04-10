@@ -5,7 +5,7 @@ fn main() {
 
     let sum: u32 = numbers
         .iter()
-        .fold(0, |mut sum, &val| {sum += val; sum});
+        .sum();
 
     println!("{:?}", numbers);
     println!("{:?}", sum);
