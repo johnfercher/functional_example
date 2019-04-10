@@ -1,12 +1,14 @@
 extern crate rand;
 
 fn main() {
-    let numbers = vec![1,2,3,4,5,6];
+    let colecao_aleatoria: [u16; 8] = rand::random();
 
-    let sum: u32 = numbers
-        .iter()
-        .fold(0, |mut sum, &val| {sum += val; sum});
+    let colecao_de_pares = colecao_aleatoria
+        .to_vec()
+        .into_iter()
+        .filter(|x| x % 2 == 0)
+        .collect::<Vec<u16>>();
 
-    println!("{:?}", numbers);
-    println!("{:?}", sum);
+    println!("{:?}", colecao_aleatoria);
+    println!("{:?}", colecao_de_pares);
 }
