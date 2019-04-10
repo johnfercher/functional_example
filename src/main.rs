@@ -1,14 +1,13 @@
 extern crate rand;
 
 fn main() {
-    let numbers = vec![1,2,3];
+    let misc = ["1", "batata", "3", "thor", "5"];
 
-    let enumerate_numbers = numbers
-        .clone()
-        .into_iter()
-        .enumerate()
-        .collect::<Vec<(usize, u16)>>();
+    let numbers = misc
+        .iter()
+        .filter_map(|x| x.parse().ok() )
+        .collect::<Vec<u16>>();
 
+    println!("{:?}", misc);
     println!("{:?}", numbers);
-    println!("{:?}", enumerate_numbers);
 }
