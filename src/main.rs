@@ -6,7 +6,7 @@ fn main() {
     let new_numbers = numbers
         .clone()
         .into_iter()
-        .skip(1)
+        .take(1)
         .collect::<Vec<u16>>();
 
     println!("{:?}", numbers);
