@@ -1,21 +1,21 @@
 extern crate rand;
 
 fn main() {
-    let all_evens = vec![2, 4];
-    let not_all_evens = vec![2, 4, 3];
+    let all_odds = vec![1, 3];
+    let not_all_odds = vec![1, 2, 3];
 
-    let is_all_even1 = all_evens
+    let has_any_odd1 = all_odds
         .clone()
         .into_iter()
-        .all(|x| x % 2 == 0);
+        .any(|x| x % 2 == 0);
 
-    let is_all_even2 = not_all_evens
+    let has_any_odd2 = not_all_odds
         .clone()
         .into_iter()
-        .all(|x| x % 2 == 0);
+        .any(|x| x % 2 == 0);
 
-    println!("{:?}", all_evens);
-    println!("{:?}", not_all_evens);
-    println!("{:?}", is_all_even1);
-    println!("{:?}", is_all_even2);
+    println!("{:?}", all_odds);
+    println!("{:?}", not_all_odds);
+    println!("{:?}", has_any_odd1);
+    println!("{:?}", has_any_odd2);
 }
