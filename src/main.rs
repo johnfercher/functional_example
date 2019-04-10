@@ -1,14 +1,13 @@
 extern crate rand;
 
 fn main() {
-    let numbers = vec![1, 2, 3];
+    let colecao_aleatoria: [u16; 8] = rand::random();
 
-    let new_numbers = numbers
-        .clone()
+    let (pares, impares): (Vec<u16>, Vec<u16>) = colecao_aleatoria
         .into_iter()
-        .take(1)
-        .collect::<Vec<u16>>();
+        .partition(|&n| n % 2 == 0);
 
-    println!("{:?}", numbers);
-    println!("{:?}", new_numbers);
+    println!("{:?}", colecao_aleatoria);
+    println!("{:?}", pares);
+    println!("{:?}", impares);
 }
