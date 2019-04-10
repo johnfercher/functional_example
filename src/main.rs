@@ -1,21 +1,14 @@
 extern crate rand;
 
 fn main() {
-    let numbers = vec![1, 2, 3, 2, 4];
+    let colecao_aleatoria: [u16; 8] = rand::random();
 
-    let position  = numbers
-        .clone()
+    let colecao_aleatoria_invertida  = colecao_aleatoria
+        .to_vec()
         .into_iter()
-        .position(|x| x == 2)
-        .unwrap();
+        .rev()
+        .collect::<Vec<u16>>();
 
-    let rposition  = numbers
-        .clone()
-        .into_iter()
-        .rposition(|x| x == 2)
-        .unwrap();
-
-    println!("{:?}", numbers);
-    println!("{:?}", position);
-    println!("{:?}", rposition);
+    println!("{:?}", colecao_aleatoria);
+    println!("{:?}", colecao_aleatoria_invertida);
 }
