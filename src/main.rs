@@ -1,16 +1,15 @@
 extern crate rand;
 
 fn main() {
-    let numbers = vec![1,2,3,4,5,6];
-    let mut sum = 0;
+    let numbers = vec![1,2,3];
+    let matrix = vec![numbers.clone(), numbers.clone(), numbers.clone()];
 
-    numbers
-        .to_vec()
+    let flat_matrix = matrix
+        .clone()
         .into_iter()
-        .for_each(|x| {
-            sum = sum + x;
-        });
+        .flat_map(|x| x)
+        .collect::<Vec<u16>>();
 
-    println!("{:?}", numbers);
-    println!("{:?}", sum);
+    println!("{:?}", matrix);
+    println!("{:?}", flat_matrix);
 }
