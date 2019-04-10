@@ -1,20 +1,12 @@
 extern crate rand;
 
 fn main() {
-    let colecao_aleatoria: [u16; 32] = rand::random();
+    let numbers = vec![1,2,3,4,5,6];
 
-    let numbers = colecao_aleatoria
-        .to_vec()
-        .into_iter()
-        .map(|x| {
-            if x % 2 == 0 {
-                String::from(format!("Número par: {:?}", x))
-            } else {
-                String::from(format!("Número impar: {:?}", x))
-            }
-        })
-        .collect::<Vec<String>>();
+    let sum: u32 = numbers
+        .iter()
+        .fold(0, |mut sum, &val| {sum += val; sum});
 
-    println!("{:?}", colecao_aleatoria);
     println!("{:?}", numbers);
+    println!("{:?}", sum);
 }
