@@ -1,12 +1,11 @@
 extern crate rand;
 
 fn main() {
-    let numbers = vec![1,2,3,4,5,6];
+    let tuples_array = [(1, 2), (3, 4)];
 
-    let sum: u32 = numbers
-        .iter()
-        .product();
+    let (left, right) : (Vec<u16>, Vec<u16>) = tuples_array.iter().cloned().unzip();
 
-    println!("{:?}", numbers);
-    println!("{:?}", sum);
+    println!("{:?}", tuples_array);
+    println!("{:?}", left);
+    println!("{:?}", right);
 }
