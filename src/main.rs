@@ -3,14 +3,12 @@ extern crate rand;
 fn main() {
     let numbers = vec![1,2,3];
 
-    let new_numbers = numbers
+    let enumerate_numbers = numbers
         .clone()
         .into_iter()
-        .chain(numbers
-            .clone()
-            .into_iter())
-        .collect::<Vec<u16>>();
+        .enumerate()
+        .collect::<Vec<(usize, u16)>>();
 
     println!("{:?}", numbers);
-    println!("{:?}", new_numbers);
+    println!("{:?}", enumerate_numbers);
 }
