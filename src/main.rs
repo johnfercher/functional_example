@@ -1,10 +1,14 @@
 extern crate rand;
+
 fn main() {
-    let colecao_aleatoria: [u16; 8] = rand::random();
-    let min = colecao_aleatoria
-        .iter()
-        .min()
+    let numbers = vec![1, 2, 3, 4];
+
+    let founded = numbers
+        .clone()
+        .into_iter()
+        .find(|&x| x == 2)
         .unwrap();
-    println!("{:?}", colecao_aleatoria);
-    println!("{:?}", min);
+
+    println!("{:?}", numbers);
+    println!("{:?}", founded);
 }
