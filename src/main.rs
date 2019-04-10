@@ -1,14 +1,21 @@
 extern crate rand;
 
 fn main() {
-    let misc = vec!["batman", "batata", "3", "thor"];
+    let numbers = vec![1, 2, 3, 2, 4];
 
-    let founded : u16 = misc
+    let position  = numbers
         .clone()
         .into_iter()
-        .find_map(|x| x.parse().ok())
+        .position(|x| x == 2)
         .unwrap();
 
-    println!("{:?}", misc);
-    println!("{:?}", founded);
+    let rposition  = numbers
+        .clone()
+        .into_iter()
+        .rposition(|x| x == 2)
+        .unwrap();
+
+    println!("{:?}", numbers);
+    println!("{:?}", position);
+    println!("{:?}", rposition);
 }
