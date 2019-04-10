@@ -1,12 +1,13 @@
 extern crate rand;
 
 fn main() {
-    let numbers = vec![1,2,3,4,5,6];
+    let colecao_aleatoria: [u16; 8] = rand::random();
 
-    let sum: u32 = numbers
+    let sum = colecao_aleatoria
         .iter()
-        .sum();
+        .max()
+        .unwrap();
 
-    println!("{:?}", numbers);
+    println!("{:?}", colecao_aleatoria);
     println!("{:?}", sum);
 }
